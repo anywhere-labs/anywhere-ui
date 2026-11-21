@@ -1,0 +1,332 @@
+{
+  "items": [
+    {
+      "name": "brand-wordmark",
+      "type": "registry:component",
+      "title": "Brand Wordmark",
+      "description": "Pre-shaped Agents Anywhere SVG wordmark with Caveat script fallback for custom brand names.",
+      "dependencies": ["@fontsource/caveat"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/brand-wordmark-path.ts",
+          "type": "registry:component",
+          "target": "components/brand-wordmark-path.ts"
+        },
+        {
+          "path": "files/brand-wordmark.tsx",
+          "type": "registry:component",
+          "target": "components/brand-wordmark.tsx"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:component",
+      "title": "Copy Button",
+      "description": "Borderless ghost clipboard button with transient checkmark confirmation.",
+      "dependencies": ["lucide-react", "sonner"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/button"],
+      "files": [
+        {
+          "path": "files/copy-button.tsx",
+          "type": "registry:component",
+          "target": "components/copy-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-select",
+      "type": "registry:component",
+      "title": "Dropdown Select",
+      "description": "Pill dropdown radio selector replacing native select controls.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/button",
+        "anywhere-labs/anywhere-ui/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "files/dropdown-select.tsx",
+          "type": "registry:component",
+          "target": "components/dropdown-select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:component",
+      "title": "Field & Notice",
+      "description": "Stacked form field wrapper and semantic status notice banner.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/field.tsx",
+          "type": "registry:component",
+          "target": "components/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "Spinner",
+      "description": "Inline spinner and full-page centered loading state.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/spinner.tsx",
+          "type": "registry:component",
+          "target": "components/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "password-input",
+      "type": "registry:component",
+      "title": "Password Input",
+      "description": "Pill password input with integrated show/hide toggle.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/input"
+      ],
+      "files": [
+        {
+          "path": "files/auth/password-input.tsx",
+          "type": "registry:component",
+          "target": "components/auth/password-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "or-divider",
+      "type": "registry:component",
+      "title": "Or Divider",
+      "description": "Hairline divider with centered label for auth flows.",
+      "files": [
+        {
+          "path": "files/sign-in/or-divider.tsx",
+          "type": "registry:component",
+          "target": "components/sign-in/or-divider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sign-in-shell",
+      "type": "registry:block",
+      "title": "Sign-In Shell",
+      "description": "Minimal centered auth page frame with wordmark header, animated rise, StepHeading, and borderless ResultCard.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/brand-wordmark"],
+      "files": [
+        {
+          "path": "files/sign-in/sign-in-shell.tsx",
+          "type": "registry:component",
+          "target": "components/sign-in/sign-in-shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "action-list",
+      "type": "registry:component",
+      "title": "Action List",
+      "description": "Hairline-separated settings rows with right-aligned actions.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/console/action-list.tsx",
+          "type": "registry:component",
+          "target": "components/console/action-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:component",
+      "title": "Page Header & Empty State",
+      "description": "Console PageHeader, PageContainer, and borderless standalone-icon EmptyState.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/console/page-header.tsx",
+          "type": "registry:component",
+          "target": "components/console/page-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-layout",
+      "type": "registry:component",
+      "title": "Form Layout",
+      "description": "FormSection, FormField, SwitchField, and CountedTextField primitives.",
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/input",
+        "anywhere-labs/anywhere-ui/label",
+        "anywhere-labs/anywhere-ui/textarea"
+      ],
+      "files": [
+        {
+          "path": "files/console/form-layout.tsx",
+          "type": "registry:component",
+          "target": "components/console/form-layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "search-input",
+      "type": "registry:component",
+      "title": "Search Input",
+      "description": "Debounced pill search box with leading icon.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/input"
+      ],
+      "files": [
+        {
+          "path": "files/console/search-input.tsx",
+          "type": "registry:component",
+          "target": "components/console/search-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "user-avatar",
+      "type": "registry:component",
+      "title": "User Avatar",
+      "description": "Borderless circular user avatar with initial fallback.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/console/user-avatar.tsx",
+          "type": "registry:component",
+          "target": "components/console/user-avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-transition",
+      "type": "registry:component",
+      "title": "Page Transition & Reveal Hook",
+      "description": "React `<ViewTransition>` wrapper (`console-enter`, `page-rise`, `nav-forward`, `nav-back`) and `useRevealInTransition` hook.",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "files/console/page-transition.tsx",
+          "type": "registry:component",
+          "target": "components/console/page-transition.tsx"
+        },
+        {
+          "path": "files/console/use-reveal-in-transition.ts",
+          "type": "registry:component",
+          "target": "components/console/use-reveal-in-transition.ts"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "Calm table pagination with borderless ghost arrow buttons.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/button"],
+      "files": [
+        {
+          "path": "files/console/pagination.tsx",
+          "type": "registry:component",
+          "target": "components/console/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "confirm-dialog",
+      "type": "registry:component",
+      "title": "Confirm Dialog",
+      "description": "Reusable confirmation AlertDialog supporting pending and destructive states.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/alert-dialog"],
+      "files": [
+        {
+          "path": "files/console/confirm-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/console/confirm-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "copyable-value",
+      "type": "registry:component",
+      "title": "Copyable Value",
+      "description": "Borderless nested surface showing a monospace value with inline CopyButton.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/copy-button"],
+      "files": [
+        {
+          "path": "files/console/copyable-value.tsx",
+          "type": "registry:component",
+          "target": "components/console/copyable-value.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "Data Table",
+      "description": "Declarative console table with loading skeletons, error state, and borderless EmptyState.",
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/skeleton",
+        "anywhere-labs/anywhere-ui/table",
+        "anywhere-labs/anywhere-ui/page-header"
+      ],
+      "files": [
+        {
+          "path": "files/console/data-table.tsx",
+          "type": "registry:component",
+          "target": "components/console/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "console-shell",
+      "type": "registry:block",
+      "title": "Console Shell",
+      "description": "Complete collapsible console frame: ViewTransition entrance/rise, hover-free SectionSwitcher wordmark, clickable AccountLink, standalone mobile CollapsedNavBar trigger, and ConsoleSidebar.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/button",
+        "anywhere-labs/anywhere-ui/sidebar",
+        "anywhere-labs/anywhere-ui/brand-wordmark",
+        "anywhere-labs/anywhere-ui/page-transition",
+        "anywhere-labs/anywhere-ui/user-avatar"
+      ],
+      "files": [
+        {
+          "path": "files/console/nav.ts",
+          "type": "registry:component",
+          "target": "components/console/nav.ts"
+        },
+        {
+          "path": "files/console/collapsed-nav-bar.tsx",
+          "type": "registry:component",
+          "target": "components/console/collapsed-nav-bar.tsx"
+        },
+        {
+          "path": "files/console/section-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/console/section-switcher.tsx"
+        },
+        {
+          "path": "files/console/console-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/console/console-sidebar.tsx"
+        },
+        {
+          "path": "files/console/console-shell.tsx",
+          "type": "registry:component",
+          "target": "components/console/console-shell.tsx"
+        }
+      ]
+    }
+  ]
+}

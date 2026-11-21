@@ -1,0 +1,11 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "anywhere-ui",
+  "homepage": "https://github.com/anywhere-labs/anywhere-ui",
+  "include": [
+    "registry/theme/registry.json",
+    "registry/ui/registry.json",
+    "registry/console/registry.json",
+    "registry/bundles/registry.json"
+  ]
+}

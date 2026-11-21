@@ -1,0 +1,13 @@
+{
+  "name": "create-anywhere-app",
+  "version": "0.1.0",
+  "description": "One-click scaffold CLI for Anywhere UI Next.js console and admin applications.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "create-anywhere-app": "./bin/create-anywhere-app.mjs"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

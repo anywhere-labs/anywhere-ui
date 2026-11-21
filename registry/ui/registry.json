@@ -1,0 +1,374 @@
+{
+  "items": [
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Base UI confirmation dialog with generous G2 card radius and pill actions.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/button"
+      ],
+      "files": [
+        {
+          "path": "files/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Circular avatar primitive built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "True circular pill badge with optical horizontal padding.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Pill button with emphasized filled (`default`) and calm wireframe (`outline`) variants and optical pill padding.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Base UI checkbox styled with Anywhere UI monochrome tokens.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Base UI modal dialog with generous G2 card corners and scroll support.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/button",
+        "anywhere-labs/anywhere-ui/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "files/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Base UI floating menu with generous G2 shell and pill menu items.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "True circular pill text input with `h-9 px-4` optical padding.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Pill input group with inline prefix/suffix addons and buttons.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/button",
+        "anywhere-labs/anywhere-ui/input",
+        "anywhere-labs/anywhere-ui/textarea"
+      ],
+      "files": [
+        {
+          "path": "files/input-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Accessible form label primitive.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Base UI popover with subtle G2 corners.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Base UI circular radio group.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Base UI scroll area with subtle monochrome scrollbars.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Hairline divider built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Slide-over drawer built on Base UI Dialog.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/button"
+      ],
+      "files": [
+        {
+          "path": "files/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Collapsible console sidebar with pill menu items and mobile sheet drawer.",
+      "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/use-mobile",
+        "anywhere-labs/anywhere-ui/button",
+        "anywhere-labs/anywhere-ui/input",
+        "anywhere-labs/anywhere-ui/separator",
+        "anywhere-labs/anywhere-ui/sheet",
+        "anywhere-labs/anywhere-ui/skeleton",
+        "anywhere-labs/anywhere-ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "files/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Loading placeholder defaulting to generous `rounded-card` corners.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner Toaster",
+      "description": "Theme-aware toast notifications styled with Anywhere UI tokens.",
+      "dependencies": ["lucide-react", "next-themes", "sonner"],
+      "files": [
+        {
+          "path": "files/sonner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Pill-in-pill toggle switch adapted from shadcn `base-luma` with tuned dark and light contrast.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Horizontal-scroll-safe data table primitives.",
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "files/table.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Base UI tabs with pill and underline variants.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/scroll-area"
+      ],
+      "files": [
+        {
+          "path": "files/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line text input with subtle G2 corners.",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Base UI pill tooltip.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    }
+  ]
+}

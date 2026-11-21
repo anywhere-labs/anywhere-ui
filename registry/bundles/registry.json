@@ -1,0 +1,83 @@
+{
+  "items": [
+    {
+      "name": "anywhere-base",
+      "type": "registry:block",
+      "title": "Anywhere UI Base Preset",
+      "description": "One-command install of Anywhere UI theme tokens, HarmonyOS Sans SC CJK font, and core pill/G2 UI primitives.",
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/theme",
+        "anywhere-labs/anywhere-ui/alert-dialog",
+        "anywhere-labs/anywhere-ui/avatar",
+        "anywhere-labs/anywhere-ui/badge",
+        "anywhere-labs/anywhere-ui/button",
+        "anywhere-labs/anywhere-ui/checkbox",
+        "anywhere-labs/anywhere-ui/dialog",
+        "anywhere-labs/anywhere-ui/dropdown-menu",
+        "anywhere-labs/anywhere-ui/input",
+        "anywhere-labs/anywhere-ui/input-group",
+        "anywhere-labs/anywhere-ui/label",
+        "anywhere-labs/anywhere-ui/popover",
+        "anywhere-labs/anywhere-ui/radio-group",
+        "anywhere-labs/anywhere-ui/scroll-area",
+        "anywhere-labs/anywhere-ui/separator",
+        "anywhere-labs/anywhere-ui/skeleton",
+        "anywhere-labs/anywhere-ui/sonner",
+        "anywhere-labs/anywhere-ui/switch",
+        "anywhere-labs/anywhere-ui/tabs",
+        "anywhere-labs/anywhere-ui/textarea",
+        "anywhere-labs/anywhere-ui/tooltip"
+      ]
+    },
+    {
+      "name": "anywhere-console",
+      "type": "registry:block",
+      "title": "Anywhere UI Console Kit",
+      "description": "Full Anywhere UI system: base theme, all 23 UI primitives, ConsoleShell with ViewTransition motion, DataTable, FormLayout, ActionList, Pagination, SearchInput, and SignInShell.",
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/anywhere-base",
+        "anywhere-labs/anywhere-ui/sheet",
+        "anywhere-labs/anywhere-ui/sidebar",
+        "anywhere-labs/anywhere-ui/table",
+        "anywhere-labs/anywhere-ui/console-shell",
+        "anywhere-labs/anywhere-ui/data-table",
+        "anywhere-labs/anywhere-ui/form-layout",
+        "anywhere-labs/anywhere-ui/action-list",
+        "anywhere-labs/anywhere-ui/page-header",
+        "anywhere-labs/anywhere-ui/pagination",
+        "anywhere-labs/anywhere-ui/search-input",
+        "anywhere-labs/anywhere-ui/confirm-dialog",
+        "anywhere-labs/anywhere-ui/copyable-value",
+        "anywhere-labs/anywhere-ui/dropdown-select",
+        "anywhere-labs/anywhere-ui/field",
+        "anywhere-labs/anywhere-ui/spinner",
+        "anywhere-labs/anywhere-ui/sign-in-shell",
+        "anywhere-labs/anywhere-ui/password-input",
+        "anywhere-labs/anywhere-ui/or-divider"
+      ]
+    },
+    {
+      "name": "anywhere-ai-kit",
+      "type": "registry:item",
+      "title": "Anywhere UI AI Guardrails",
+      "description": "Installs AGENTS.md, the reusable `.agents/skills/anywhere-ui/SKILL.md` skill, and `tests/design-discipline.test.ts`.",
+      "files": [
+        {
+          "path": "files/AGENTS.md",
+          "type": "registry:file",
+          "target": "AGENTS.md"
+        },
+        {
+          "path": "files/SKILL.md",
+          "type": "registry:file",
+          "target": ".agents/skills/anywhere-ui/SKILL.md"
+        },
+        {
+          "path": "files/design-discipline.test.ts",
+          "type": "registry:file",
+          "target": "tests/design-discipline.test.ts"
+        }
+      ]
+    }
+  ]
+}

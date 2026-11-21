@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Corepack (Yarn 4)
+        run: corepack enable
+
+      - name: Check registry sync drift
+        run: node scripts/sync-registry.mjs --check
+
+      - name: Validate shadcn registry manifest
+        run: npx --yes shadcn@latest registry validate ./registry.json
+
+      - name: Build shadcn registry payloads
+        run: npx --yes shadcn@latest build ./registry.json --output /tmp/anywhere-ui-r
+
+      - name: Run CLI unit tests
+        run: node --test packages/create-anywhere-app/test/cli.test.mjs
+
+      - name: Smoke-test scaffolded console app (typecheck, lint, test, build)
+        run: |
+          node packages/create-anywhere-app/bin/create-anywhere-app.mjs /tmp/smoke-console \
+            --brand "Smoke Console" --no-git --no-install --yes
+          cd /tmp/smoke-console
+          corepack yarn install
+          corepack yarn typecheck
+          corepack yarn lint
+          corepack yarn test
+          corepack yarn build

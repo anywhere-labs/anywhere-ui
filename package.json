@@ -1,0 +1,38 @@
+{
+  "name": "@anywhere-labs/anywhere-ui",
+  "version": "0.1.0",
+  "description": "Anywhere Labs design system: shadcn GitHub Registry, one-click Next.js console scaffold CLI, and AI design guardrails.",
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "yarn@4.6.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anywhere-labs/anywhere-ui.git"
+  },
+  "homepage": "https://github.com/anywhere-labs/anywhere-ui",
+  "bin": {
+    "anywhere-ui": "./packages/create-anywhere-app/bin/create-anywhere-app.mjs",
+    "create-anywhere-app": "./packages/create-anywhere-app/bin/create-anywhere-app.mjs"
+  },
+  "files": [
+    "packages/create-anywhere-app/bin/",
+    "templates/console-next/",
+    "skills/",
+    "registry.json",
+    "registry/",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "sync:registry": "node scripts/sync-registry.mjs",
+    "check:sync": "node scripts/sync-registry.mjs --check",
+    "validate:registry": "npx --yes shadcn@latest registry validate ./registry.json",
+    "build:registry": "npx --yes shadcn@latest build ./registry.json --output ./public/r",
+    "test:cli": "node --test packages/create-anywhere-app/test/cli.test.mjs",
+    "check": "yarn check:sync && yarn test:cli && yarn validate:registry"
+  }
+}

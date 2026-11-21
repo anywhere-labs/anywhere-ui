@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Class Name Utility",
+      "description": "clsx + tailwind-merge `cn()` helper.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "files/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "useIsMobile Hook",
+      "description": "Responsive breakpoint hook matching Tailwind's 768px md breakpoint.",
+      "files": [
+        {
+          "path": "files/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "hooks/use-mobile.ts"
+        }
+      ]
+    },
+    {
+      "name": "harmonyos-font",
+      "type": "registry:file",
+      "title": "HarmonyOS Sans SC (CJK-only)",
+      "description": "Self-hosted variable HarmonyOS Sans SC subsets covering CJK/punctuation only so English stays on native SF Pro / Segoe UI.",
+      "dependencies": ["@luzixu/harmonyos-sans@0.1.2"],
+      "files": [
+        {
+          "path": "files/harmonyos-sans-sc.css",
+          "type": "registry:file",
+          "target": "app/harmonyos-sans-sc.css"
+        }
+      ],
+      "docs": "Import `./harmonyos-sans-sc.css` before `./globals.css` in `app/layout.tsx`."
+    },
+    {
+      "name": "theme",
+      "type": "registry:style",
+      "title": "Anywhere UI Theme & Tokens",
+      "description": "Monochrome dark-first semantic color tokens, CJK HarmonyOS Sans SC + native Latin font stack, two-tier G2 corner geometry (`superellipse(1.35)` + round pills), and ViewTransition keyframes.",
+      "dependencies": ["@fontsource/caveat", "shadcn", "tw-animate-css"],
+      "registryDependencies": [
+        "anywhere-labs/anywhere-ui/utils",
+        "anywhere-labs/anywhere-ui/harmonyos-font"
+      ],
+      "files": [
+        {
+          "path": "files/globals.css",
+          "type": "registry:file",
+          "target": "app/globals.css"
+        }
+      ],
+      "docs": "Import `@fontsource/caveat/500.css`, `./harmonyos-sans-sc.css`, and `./globals.css` in `app/layout.tsx`."
+    }
+  ]
+}
