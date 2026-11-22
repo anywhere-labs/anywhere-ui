@@ -70,8 +70,10 @@ Anywhere UI is a calm, monochrome, dark-first console aesthetic (dark is the def
 - **Mobile Top Bar (`CollapsedNavBar`)**:
   - The sidebar expand trigger (`PanelLeftIcon`) is a **standalone ghost icon button** (`Button variant="ghost" size="icon-sm"`).
   - The `BrandWordmark` sits beside it as a separate, non-button sibling with zero hover/selected background.
-- **Sidebar Identity Row (`AccountLink`)**:
-  - Clicking the top avatar + display name row opens the user's Profile page directly — do not duplicate a separate "Profile" item in the sidebar nav list.
+- **Sidebar Grouping & Footer Account Switcher (`AccountSwitcher`)**:
+  - Keep `Home` (`/account`) in its own standalone top group with no section label; place dedicated `Profile` and `Plan` pages cleanly under the `Account` group.
+  - Place the signed-in account pill at the **bottom of the sidebar footer** (`AccountSwitcher`) replacing any standalone Sign Out button — clicking opens an upward floating menu (`side="top"`) to switch accounts, add another account, or sign out.
+  - When an `Appearance` page already controls display language, do not duplicate a separate language selector in the sidebar footer (keep language switching in `SignInShell`'s top-right header for signed-out visitors).
 - **Conditional Navigation**:
   - Hide domain sections (e.g., Organizations) completely from the sidebar, quick pills, and home search when the user has no access or belongs to zero items.
 - **Account Home (`/account`)**:

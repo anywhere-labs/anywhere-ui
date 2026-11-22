@@ -3,34 +3,28 @@
 import {
   ArrowLeft,
   Home,
-  Languages,
   LayoutDashboard,
   Layers,
-  LogOut,
   Palette,
   Settings,
   ShieldCheck,
+  UserRound,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 import { ConsoleShell } from "@/components/console/console-shell"
+import { AccountSwitcher } from "@/components/console/console-sidebar"
 import type { NavGroup } from "@/components/console/nav"
 import type { SectionDestination } from "@/components/console/section-switcher"
 import { useI18n } from "@/components/i18n-provider"
-import { LanguageItems } from "@/components/language-menu"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
+import { SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar"
 import { APP_CONFIG } from "@/lib/config"
-import { LOCALE_LABELS } from "@/lib/i18n"
-import { useSession, useSignOut } from "@/lib/session"
+import {
+  useAccounts,
+  useSession,
+  useSignOut,
+  useSwitchAccount,
+} from "@/lib/session"
 
 export const ACCOUNT_HOME = "/account"
 export const PROFILE_PATH = "/account/profile"
@@ -40,8 +34,8 @@ export const ADMIN_ITEMS_PATH = "/admin/items"
 export const ADMIN_SETTINGS_PATH = "/admin/settings"
 
 /**
- * Connects the reusable `ConsoleShell` primitive to this app's navigation,
- * session adapter, and bilingual i18n dictionary.
+ * Connects the reusable `ConsoleShell` and `AccountSwitcher` primitives to
+ * this app's navigation, multi-account session adapter, and i18n dictionary.
  */
 export function AppConsole({
   section,
@@ -50,9 +44,11 @@ export function AppConsole({
   section: "account" | "admin"
   children: React.ReactNode
 }) {
-  const { t, locale } = useI18n()
+  const { t } = useI18n()
   const router = useRouter()
   const user = useSession().data?.user
+  const accountsQuery = useAccounts(!!user)
+  const switchAccount = useSwitchAccount()
   const signOut = useSignOut()
   const isAdmin = APP_CONFIG.enableAdminConsole && user?.role === "admin"
 
@@ -60,9 +56,12 @@ export function AppConsole({
     section === "account"
       ? [
           {
+            items: [{ title: t("shell.navHome"), href: ACCOUNT_HOME, icon: Home }],
+          },
+          {
             label: t("shell.groupAccount"),
             items: [
-              { title: t("shell.navHome"), href: ACCOUNT_HOME, icon: Home },
+              { title: t("shell.navProfile"), href: PROFILE_PATH, icon: UserRound },
               { title: t("shell.navAppearance"), href: APPEARANCE_PATH, icon: Palette },
             ],
           },
@@ -94,34 +93,46 @@ export function AppConsole({
     })
   }
 
+  const accounts =
+    accountsQuery.data && accountsQuery.data.length > 0
+      ? accountsQuery.data
+      : user
+        ? [{ user, active: true }]
+        : []
+
   const footer = (
     <SidebarMenu>
       <SidebarMenuItem>
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            render={<SidebarMenuButton />}
-            aria-label={t("common.language")}
-          >
-            <Languages />
-            <span>{LOCALE_LABELS[locale]}</span>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" side="top">
-            <LanguageItems />
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <SidebarMenuButton
-          disabled={signOut.isPending}
-          onClick={() => {
-            signOut.mutate(undefined, {
-              onSuccess: () => router.replace("/sign-in"),
+        <AccountSwitcher
+          accounts={accounts}
+          pending={switchAccount.isPending || signOut.isPending}
+          onSwitch={(userId) => {
+            switchAccount.mutate(userId, {
+              onSuccess: () => router.refresh(),
             })
           }}
-        >
-          <LogOut />
-          <span>{t("shell.signOut")}</span>
-        </SidebarMenuButton>
+          onAddAccount={() => router.push("/sign-in?add=1&next=/account")}
+          onSignOut={() => {
+            signOut.mutate(undefined, {
+              onSuccess: (result) => {
+                router.replace(result.switchedTo ? "/account" : "/sign-in")
+              },
+            })
+          }}
+          onSignOutAll={() => {
+            signOut.mutate(
+              { all: true },
+              { onSuccess: () => router.replace("/sign-in") }
+            )
+          }}
+          labels={{
+            triggerAria: t("shell.switchAccount"),
+            accountsHeading: t("shell.accountsLabel"),
+            addAccount: t("shell.addAccount"),
+            signOut: t("shell.signOut"),
+            signOutAll: t("shell.signOutAll"),
+          }}
+        />
       </SidebarMenuItem>
     </SidebarMenu>
   )
@@ -136,7 +147,6 @@ export function AppConsole({
       openNavigationLabel={t("shell.openNavigation")}
       switchLabel={t("shell.switchConsole")}
       destinations={destinations}
-      account={{ href: PROFILE_PATH, user }}
       nav={nav}
       footer={footer}
     >

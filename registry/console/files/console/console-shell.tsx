@@ -3,10 +3,7 @@
 import { usePathname } from "next/navigation"
 
 import { CollapsedNavBar } from "@/components/console/collapsed-nav-bar"
-import {
-  ConsoleSidebar,
-  type ConsoleAccountLink,
-} from "@/components/console/console-sidebar"
+import { ConsoleSidebar } from "@/components/console/console-sidebar"
 import type { NavGroup } from "@/components/console/nav"
 import { PageTransition } from "@/components/console/page-transition"
 import type { SectionDestination } from "@/components/console/section-switcher"
@@ -26,7 +23,6 @@ export function ConsoleShell({
   openNavigationLabel,
   switchLabel,
   destinations,
-  account,
   nav,
   footer,
   banner,
@@ -40,7 +36,6 @@ export function ConsoleShell({
   openNavigationLabel?: string
   switchLabel?: string
   destinations?: readonly SectionDestination[]
-  account?: ConsoleAccountLink
   nav: readonly NavGroup[]
   footer?: React.ReactNode
   banner?: React.ReactNode
@@ -59,7 +54,6 @@ export function ConsoleShell({
           homeLabel={homeLabel}
           switchLabel={switchLabel}
           destinations={destinations}
-          account={account}
           nav={nav}
           footer={footer}
         />

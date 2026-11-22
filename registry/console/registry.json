@@ -291,10 +291,11 @@
       "name": "console-shell",
       "type": "registry:block",
       "title": "Console Shell",
-      "description": "Complete collapsible console frame: ViewTransition entrance/rise, hover-free SectionSwitcher wordmark, clickable AccountLink, standalone mobile CollapsedNavBar trigger, and ConsoleSidebar.",
+      "description": "Complete collapsible console frame: ViewTransition entrance/rise, hover-free SectionSwitcher wordmark, footer AccountSwitcher, standalone mobile CollapsedNavBar trigger, and ConsoleSidebar.",
       "dependencies": ["lucide-react"],
       "registryDependencies": [
         "anywhere-labs/anywhere-ui/button",
+        "anywhere-labs/anywhere-ui/dropdown-menu",
         "anywhere-labs/anywhere-ui/sidebar",
         "anywhere-labs/anywhere-ui/brand-wordmark",
         "anywhere-labs/anywhere-ui/page-transition",

@@ -85,7 +85,7 @@ Full rules live in [`skills/anywhere-ui/SKILL.md`](./skills/anywhere-ui/SKILL.md
   - Two pill button hierarchies: emphasized filled `default` and calm wireframe `outline`, with optical pill padding (`px-4` / `px-5`).
   - `base-luma` pill-in-pill `Switch` (`44×20` track + `24×16` pill thumb).
   - Borderless cards, theme tiles, avatars, standalone icons, and `ghost` icon-only buttons.
-  - Hover-free sidebar wordmark (`SectionSwitcher`, interactive on click only) and a standalone mobile sidebar trigger separate from the wordmark in `CollapsedNavBar`.
+  - Hover-free sidebar wordmark (`SectionSwitcher`, interactive on click only), standalone top `Home` group, footer `AccountSwitcher` (switch accounts / add account / sign out), language consolidated into `Appearance` (no duplicate sidebar footer language row), and a standalone mobile sidebar trigger separate from the wordmark in `CollapsedNavBar`.
 - **React `<ViewTransition>` motion**: `console-enter`, `page-rise`, `nav-forward` / `nav-back`, and calm sign-in entrance.
 
 ## Repository Layout & Local Checks

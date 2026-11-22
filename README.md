@@ -85,7 +85,7 @@ npx shadcn@latest list anywhere-labs/anywhere-ui
   - 胶囊按钮主次分明：强调态实心 `default` + 非强调态线框 `outline`，光学内边距 `px-4` / `px-5`。
   - 开关采用 `base-luma` 胶囊内嵌胶囊样式（`44×20` 轨道 + `24×16` 胶囊滑块）。
   - 卡片、主题选择项、头像、独立图标与纯图标按钮（`variant="ghost"`）均不加多余圆底或重边框。
-  - 侧边栏顶部 Wordmark 悬停无选中背景（仅点击触发交互）；移动端顶栏的展开侧边栏按钮独立于 Wordmark。
+  - 侧边栏顶部 Wordmark 悬停无选中背景（仅点击触发交互）；「首页」独立置顶分组；底部为 `AccountSwitcher` 多账号切换器（切换账号 / 添加新账号 / 退出账号）；语言切换收敛至「外观」页，不在侧边栏底部重复展示；移动端顶栏的展开侧边栏按钮独立于 Wordmark。
 - **原生 `<ViewTransition>` 动效**：`console-enter`（控制台进入）、`page-rise`（同层切换）、`nav-forward` / `nav-back`（层级切换）与登录页平滑上浮。
 
 ## 仓库目录与开发检查

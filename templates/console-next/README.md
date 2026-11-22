@@ -19,9 +19,10 @@ corepack yarn dev
 
 ## 已内置模块
 
-- **账户首页 (`/account`)**：居中身份头、`/` 快捷键搜索胶囊、线框快捷入口胶囊、单张无边框焦点卡片
-- **个人资料 (`/account/profile`)**：点击侧边栏顶部头像行直达，含显示名称编辑与可复制账户 ID
-- **外观设置 (`/account/appearance`)**：无边框主题选择卡片（浅色 / 深色 / 跟随系统）与语言切换
+- **账户首页 (`/account`)**：独立置顶「首页」入口、居中身份头、`/` 快捷键搜索胶囊、线框快捷入口胶囊、单张无边框焦点卡片
+- **侧边栏底部账号切换器 (`AccountSwitcher`)**：支持多账号切换、添加新账号与退出账号
+- **个人资料 (`/account/profile`)**：显示名称编辑与可复制账户 ID
+- **外观设置 (`/account/appearance`)**：无边框主题选择卡片（浅色 / 深色 / 跟随系统）与语言切换（侧边栏不再重复放语言按钮）
 - **双步登录 (`/sign-in` & `/sign-in/password`)**：极简居中布局与平滑入场动效
 - **管理控制台 (`/admin`)**：概览指标卡片、完整 CRUD `DataTable` 示例 (`/admin/items`)、设置页表单与开关示例 (`/admin/settings`)
 - **AI 设计护栏**：`AGENTS.md`、`.agents/skills/anywhere-ui/SKILL.md`、`tests/design-discipline.test.ts`、`tests/i18n.test.ts`
