@@ -142,6 +142,20 @@
       ]
     },
     {
+      "name": "detail-list",
+      "type": "registry:component",
+      "title": "Detail List & Card",
+      "description": "Borderless rounded-card key/value and plan entitlement list with localized descriptions and right-aligned tabular values (never exposes raw technical field keys).",
+      "registryDependencies": ["anywhere-labs/anywhere-ui/utils"],
+      "files": [
+        {
+          "path": "files/console/detail-list.tsx",
+          "type": "registry:component",
+          "target": "components/console/detail-list.tsx"
+        }
+      ]
+    },
+    {
       "name": "page-header",
       "type": "registry:component",
       "title": "Page Header & Empty State",

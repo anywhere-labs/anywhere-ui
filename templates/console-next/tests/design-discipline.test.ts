@@ -71,4 +71,35 @@ describe("Anywhere UI design discipline", () => {
     )
     expect(navBar).not.toMatch(/<Button[\s\S]*?<BrandWordmark[\s\S]*?<\/Button>/)
   })
+
+  it("keeps identical queryFn shapes for every shared React Query key", () => {
+    const files = [
+      ...walk(path.join(root, "app"), [".ts", ".tsx"]),
+      ...walk(path.join(root, "components"), [".ts", ".tsx"]),
+      ...walk(path.join(root, "lib"), [".ts", ".tsx"]),
+    ]
+    const shapesByKey = new Map<string, Set<string>>()
+    for (const file of files) {
+      const source = readFileSync(file, "utf8")
+      for (const match of source.matchAll(/useQuery\(\{[\s\S]*?\n\s*\}\)/g)) {
+        const block = match[0]
+        const keyMatch = block.match(/queryKey:\s*([^\n,]+)/)
+        const fnMatch = block.match(
+          /queryFn:\s*([\s\S]*?)(?:,\s*(?:enabled|staleTime|placeholderData|retry)|\n\s*\})/
+        )
+        if (!keyMatch || !fnMatch) continue
+        const keyName = keyMatch[1].trim().replace(/\(.*\)/, "(...)")
+        const normalizedFn = fnMatch[1]
+          .replace(/\s+/g, " ")
+          .replace(/,\s*$/, "")
+          .trim()
+        if (!shapesByKey.has(keyName)) shapesByKey.set(keyName, new Set())
+        shapesByKey.get(keyName)!.add(normalizedFn)
+      }
+    }
+    const mismatches = [...shapesByKey.entries()]
+      .filter(([, fns]) => fns.size > 1)
+      .map(([key, fns]) => `${key}: ${[...fns].join(" VS ")}`)
+    expect(mismatches).toEqual([])
+  })
 })

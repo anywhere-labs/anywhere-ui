@@ -6,6 +6,7 @@ This repository is the **single source of truth** for the Anywhere Labs web visu
 
 | Path | Role |
 | --- | --- |
+| `docs/design-system.md` & `docs/design-system.en.md` | Authoritative bilingual Anywhere UI design system specification (tokens, typography, corner geometry, controls, IA, copywriting, motion, guardrails). |
 | `templates/console-next/` | **Canonical source of truth** for tokens, UI primitives, Console components, starter pages, and guardrails. Always edit here first. |
 | `skills/anywhere-ui/SKILL.md` | Canonical reusable AI Agent Skill describing the design system. Copied to `templates/console-next/.agents/skills/anywhere-ui/SKILL.md` and `registry/bundles/files/` by `scripts/sync-registry.mjs`. |
 | `registry.json` & `registry/*/registry.json` | shadcn Source Registry manifests (`npx shadcn@latest add anywhere-labs/anywhere-ui/<item>`). |
@@ -30,6 +31,7 @@ Read [`skills/anywhere-ui/SKILL.md`](./skills/anywhere-ui/SKILL.md) before makin
    - Top sidebar wordmark (`SectionSwitcher`) has **no hover/selected background** (interactive on click only).
    - Mobile `CollapsedNavBar` keeps the expand-sidebar button as a standalone ghost icon button separate from the hover-free wordmark.
 6. **ViewTransition motion**: `<ViewTransition>` via `PageTransition` + `useRevealInTransition` (`console-enter`, `page-rise`, `nav-forward`, `nav-back`).
+7. **User-facing copy & query safety**: never leak raw technical field keys or internal slugs on end-user views (use `DetailCard`/`DetailList` with localized copy); keep one canonical TanStack Query hook per shared `queryKey`.
 
 ## Verification Before Pushing
 

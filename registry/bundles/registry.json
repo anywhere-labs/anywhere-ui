@@ -43,6 +43,7 @@
         "anywhere-labs/anywhere-ui/data-table",
         "anywhere-labs/anywhere-ui/form-layout",
         "anywhere-labs/anywhere-ui/action-list",
+        "anywhere-labs/anywhere-ui/detail-list",
         "anywhere-labs/anywhere-ui/page-header",
         "anywhere-labs/anywhere-ui/pagination",
         "anywhere-labs/anywhere-ui/search-input",

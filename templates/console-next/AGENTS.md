@@ -17,6 +17,8 @@ Read [`.agents/skills/anywhere-ui/SKILL.md`](./.agents/skills/anywhere-ui/SKILL.
 - **Two-tier corners**: multi-line rectangles use `corner-shape: superellipse(1.35)` with `--radius-card` (~31px); circles and pills (`[class*="rounded-full"]`, buttons, inputs, badges, switches, sidebar pills, pill tabs, avatars) stay strictly `corner-shape: round`. Never use `[class*="-full"]`.
 - **Borderless discipline**: cards (`rounded-card bg-card`), theme tiles, avatars, standalone icons (no gray circle box behind lone icons), and icon-only buttons (`variant="ghost"`).
 - **Wordmark & mobile top bar**: sidebar wordmark (`SectionSwitcher`) never paints a hover background; mobile `CollapsedNavBar` keeps the sidebar trigger as a standalone ghost icon button beside the hover-free wordmark.
+- **User-facing copy & DetailCard**: never expose raw dotted claim keys or internal slugs on end-user pages; render plans/quotas/attributes with `DetailCard` / `DetailList` using rich localized titles, descriptions, and units.
+- **Query cache consistency**: export one canonical TanStack Query hook per shared `queryKey` so different routes never cache incompatible payload shapes under the same key.
 - **Bilingual parity**: update both `lib/locales/en.ts` and `lib/locales/zh-CN.ts` together (`tests/i18n.test.ts` verifies exact key and placeholder parity).
 
 ## Adding More Anywhere UI Components

@@ -60,6 +60,7 @@ npx shadcn@latest add anywhere-labs/anywhere-ui/anywhere-ai-kit
 # 按需安装单个组件
 npx shadcn@latest add anywhere-labs/anywhere-ui/button
 npx shadcn@latest add anywhere-labs/anywhere-ui/switch
+npx shadcn@latest add anywhere-labs/anywhere-ui/detail-list
 npx shadcn@latest add anywhere-labs/anywhere-ui/data-table
 npx shadcn@latest add anywhere-labs/anywhere-ui/console-shell
 ```
@@ -74,24 +75,26 @@ npx shadcn@latest list anywhere-labs/anywhere-ui
 
 ## 核心视觉与交互规范
 
-完整规范见内置 AI Skill [`skills/anywhere-ui/SKILL.md`](./skills/anywhere-ui/SKILL.md)：
+完整设计系统手册见 [`docs/design-system.md`](./docs/design-system.md)（英文版 [`docs/design-system.en.md`](./docs/design-system.en.md)），AI Agent 规范见 [`skills/anywhere-ui/SKILL.md`](./skills/anywhere-ui/SKILL.md)：
 
 - **极简黑白语义色板**：深色模式（默认）纯黑 `#000000` 画布 + `#141414` 无边框卡片；浅色模式 `#ffffff` 画布 + `#f3f3f3` 卡片 + `oklch(0.92 0 0)` 高对比度侧边栏选中态。TSX 中零硬编码十六进制色值。
 - **中英文混排字体**：中文采用自托管可变字重 **HarmonyOS Sans SC**（`@luzixu/harmonyos-sans` 纯 CJK 子集，按字频按需加载 WOFF2）；英文与数字保留原生 **SF Pro / Segoe UI**，纯英文页面零额外字体下载。
 - **两级圆角几何（`corner-shape`）**：
   - 卡片、弹窗、浮层、多行输入框与骨架屏采用 `superellipse(1.35)` 平滑连续圆角（`--radius: 0.75rem`，卡片圆角 `rounded-card` ≈ `31.2px`）。
   - 胶囊按钮、单行输入框、徽章、开关、侧边栏导航项与头像严格保持正圆端帽 `corner-shape: round`。
-- **克制控件与无边框原则**：
+- **克制控件、无边框与面向人的信息展示**：
   - 胶囊按钮主次分明：强调态实心 `default` + 非强调态线框 `outline`，光学内边距 `px-4` / `px-5`。
   - 开关采用 `base-luma` 胶囊内嵌胶囊样式（`44×20` 轨道 + `24×16` 胶囊滑块）。
   - 卡片、主题选择项、头像、独立图标与纯图标按钮（`variant="ghost"`）均不加多余圆底或重边框。
   - 侧边栏顶部 Wordmark 悬停无选中背景（仅点击触发交互）；「首页」独立置顶分组；底部为 `AccountSwitcher` 多账号切换器（切换账号 / 添加新账号 / 退出账号）；语言切换收敛至「外观」页，不在侧边栏底部重复展示；移动端顶栏的展开侧边栏按钮独立于 Wordmark。
+  - 普通用户套餐与权益页使用 `DetailCard` / `DetailList` 展示清晰准确的可配置多语言说明，绝不暴露内部技术字段名或原始 slug；静态测试同时守卫 TanStack Query 共享 `queryKey` 返回结构一致性。
 - **原生 `<ViewTransition>` 动效**：`console-enter`（控制台进入）、`page-rise`（同层切换）、`nav-forward` / `nav-back`（层级切换）与登录页平滑上浮。
 
 ## 仓库目录与开发检查
 
 | 目录 | 说明 |
 | --- | --- |
+| `docs/design-system.md` | 完整设计系统规范（含英文版 `docs/design-system.en.md`） |
 | `templates/console-next/` | 权威单一数据源：完整可运行的 Next.js 16 控制台模板 |
 | `registry.json` & `registry/` | shadcn Source Registry 清单与同步文件 |
 | `packages/create-anywhere-app/` | 零依赖 Node ESM 脚手架 CLI 与测试 |

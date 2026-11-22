@@ -60,6 +60,7 @@ npx shadcn@latest add anywhere-labs/anywhere-ui/anywhere-ai-kit
 # Individual primitives or console modules
 npx shadcn@latest add anywhere-labs/anywhere-ui/button
 npx shadcn@latest add anywhere-labs/anywhere-ui/switch
+npx shadcn@latest add anywhere-labs/anywhere-ui/detail-list
 npx shadcn@latest add anywhere-labs/anywhere-ui/data-table
 npx shadcn@latest add anywhere-labs/anywhere-ui/console-shell
 ```
@@ -74,24 +75,26 @@ npx shadcn@latest list anywhere-labs/anywhere-ui
 
 ## Design System Highlights
 
-Full rules live in [`skills/anywhere-ui/SKILL.md`](./skills/anywhere-ui/SKILL.md):
+Full specification in [`docs/design-system.en.md`](./docs/design-system.en.md) (中文版 [`docs/design-system.md`](./docs/design-system.md)), plus the reusable AI Agent skill in [`skills/anywhere-ui/SKILL.md`](./skills/anywhere-ui/SKILL.md):
 
 - **Monochrome semantic tokens**: pure `#000000` dark canvas (default) with borderless `#141414` cards; `#ffffff` light canvas with `#f3f3f3` cards and clear `oklch(0.92 0 0)` sidebar active contrast. Zero hard-coded hex colors in `.tsx`.
 - **Mixed Latin + CJK typography**: self-hosted variable **HarmonyOS Sans SC** (`@luzixu/harmonyos-sans`, CJK/punctuation subsets only) ahead of native **SF Pro / Segoe UI** — Chinese renders in HarmonyOS Sans across macOS/Windows/Linux while English remains native SF Pro / Segoe UI with zero CJK font download on pure English pages.
 - **Two-tier corner geometry (`corner-shape`)**:
   - Cards, dialogs, popovers, textareas, tiles, and card skeletons use subtle G2 `superellipse(1.35)` (`--radius: 0.75rem`, `rounded-card` ≈ `31.2px`).
   - Pills and circles (`rounded-full`, buttons, single-line inputs, badges, switches, sidebar items, avatars) stay strictly `corner-shape: round`.
-- **Restrained controls & chrome**:
+- **Restrained controls, chrome & human-first copy**:
   - Two pill button hierarchies: emphasized filled `default` and calm wireframe `outline`, with optical pill padding (`px-4` / `px-5`).
   - `base-luma` pill-in-pill `Switch` (`44×20` track + `24×16` pill thumb).
   - Borderless cards, theme tiles, avatars, standalone icons, and `ghost` icon-only buttons.
   - Hover-free sidebar wordmark (`SectionSwitcher`, interactive on click only), standalone top `Home` group, footer `AccountSwitcher` (switch accounts / add account / sign out), language consolidated into `Appearance` (no duplicate sidebar footer language row), and a standalone mobile sidebar trigger separate from the wordmark in `CollapsedNavBar`.
+  - End-user plans and attributes use `DetailCard` / `DetailList` with configurable rich localized copy (never leaking raw technical keys or slugs); static guardrails also enforce TanStack Query shared-key shape consistency.
 - **React `<ViewTransition>` motion**: `console-enter`, `page-rise`, `nav-forward` / `nav-back`, and calm sign-in entrance.
 
 ## Repository Layout & Local Checks
 
 | Path | Purpose |
 | --- | --- |
+| `docs/design-system.md` | Authoritative bilingual design system specification (`design-system.en.md` for English) |
 | `templates/console-next/` | Canonical Next.js 16 console starter template |
 | `registry.json` & `registry/` | shadcn Source Registry manifests and synced source files |
 | `packages/create-anywhere-app/` | Zero-dependency Node ESM scaffold CLI and test suite |

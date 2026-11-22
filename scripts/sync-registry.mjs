@@ -56,6 +56,7 @@ const CONSOLE_COMPONENTS = [
   "components/console/console-sidebar.tsx",
   "components/console/copyable-value.tsx",
   "components/console/data-table.tsx",
+  "components/console/detail-list.tsx",
   "components/console/form-layout.tsx",
   "components/console/nav.ts",
   "components/console/page-header.tsx",
